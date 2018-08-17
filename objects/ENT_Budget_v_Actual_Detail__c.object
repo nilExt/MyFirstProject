@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Budget_GCM__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Budgeted Amount from latest GCM budget</inlineHelpText>
+        <label>Budget - GCM ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Projected_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Hours across all assignments for this resource from related project projected budget.</inlineHelpText>
+        <label>Budget - Projected (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_Projected__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount from related project projected budget. For all Category values, this is an unburdened amount.</inlineHelpText>
+        <label>Budget - Projected ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Revised_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Hours across all assignments for this Resource from latest (Is Latest = true) project amendment budget that is approved (Funder - Approved).</inlineHelpText>
+        <label>Budget - Revised (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget_Revised__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount from related latest (Is Latest = true) project amendment budget that is approved (Funder - Approved). For all Category values, this is an unburdened amount.</inlineHelpText>
+        <label>Budget - Revised ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <description>Budget revised, budget projected or GCM Budgeted $ amount.
+MD 080117 removed GCM from formula to line up reports and change compare to not null instead of &gt; 0</description>
+        <externalId>false</externalId>
+        <formula>IF( Project__r.Count_of_Amendments_Approved__c &gt; 0, Budget_Revised__c,
+IF(  Project__r.Projected_Budget_Count__c &gt; 0, Budget_Projected__c,  null  ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Budget Revised else Budget Projected</inlineHelpText>
+        <label>Budget ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The latest approved rate which is either the latest from Resource Rate Approval, or Revised Rate, or Projected Rate</inlineHelpText>
+        <label>Current Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GCM_Approved_Disbursement_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Hours from related approved GCM Disbursements</inlineHelpText>
+        <label>GCM - Approved Disbursement (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GCM_Approved_Disbursement__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount from related approved GCM Disbursements</inlineHelpText>
+        <label>GCM - Approved Disbursement ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GCM_Pending_Disbursement_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Hours from related pending GCM Disbursements</inlineHelpText>
+        <label>GCM - Pending Disbursement (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GCM_Pending_Disbursement__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount from related pending GCM Disbursements</inlineHelpText>
+        <label>GCM - Pending Disbursement ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Billed_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Billed&apos;</inlineHelpText>
+        <label>PSFT Actual - Billed (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Billed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Billed&apos;</inlineHelpText>
+        <label>PSFT Actual - Billed ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Deferred_Bill_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Deferred Billings&apos;</inlineHelpText>
+        <label>PSFT Actual - Deferred Bill (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Deferred_Bill__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Deferred Billings&apos;</inlineHelpText>
+        <label>PSFT Actual - Deferred Bill ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Ready_to_Bill_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Ready to Bill&apos;</inlineHelpText>
+        <label>PSFT Actual - Ready to Bill (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Ready_to_Bill__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>From corresponding PSFT Project Actual where BvA Rollup Category is &apos;Ready to Bill&apos;</inlineHelpText>
+        <label>PSFT Actual - Ready to Bill ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Total_Billings_Hrs__c</fullName>
+        <description>Sum of PSFT Actual Billed, Deferred Bill and Ready to Bill Hrs.</description>
+        <externalId>false</externalId>
+        <formula>PSFT_Actual_Billed_Hrs__c +  PSFT_Actual_Deferred_Bill_Hrs__c +  PSFT_Actual_Ready_to_Bill_Hrs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of PSFT Actual Billed, Deferred Bill and Ready to Bill Hrs.</inlineHelpText>
+        <label>PSFT Actual - Total Billings (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSFT_Actual_Total_Billings__c</fullName>
+        <description>Sum of PSFT Actual Billed, Deferred Bill and Ready to Bill.</description>
+        <externalId>false</externalId>
+        <formula>PSFT_Actual_Billed__c +  PSFT_Actual_Deferred_Bill__c +  PSFT_Actual_Ready_to_Bill__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of PSFT Actual Billed, Deferred Bill and Ready to Bill.</inlineHelpText>
+        <label>PSFT Actual - Total Billings ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Projected_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Unburdened Rate from the approved projected project budget for this resource</inlineHelpText>
+        <label>Projected Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Dollars__c</fullName>
+        <description>Budget Projected, Budget Revised or GCM Budget less Total Billings or GCM Disbursement total.</description>
+        <externalId>false</externalId>
+        <formula>Budget__c - PSFT_Actual_Total_Billings__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calc: Budget ($) - PSFT Actual Total Billings ($)</inlineHelpText>
+        <label>Remaining ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Hrs__c</fullName>
+        <description>Budget Projected, Revised or GCM Budgeted hrs. less Total Actual Billing or GCM Disbursement hrs.</description>
+        <externalId>false</externalId>
+        <formula>Remaining_Dollars__c /  Current_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calc: Remaining ($) / Current Rate</inlineHelpText>
+        <label>Remaining (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revised_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Unburdened bill rate from the latest (Is Latest = true) project amendment budget where status is Funder - Approved</inlineHelpText>
+        <label>Revised Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Undefined__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND
+(
+ISBLANK( Account__c ),
+ISBLANK( Resource__c )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If both Account and Resource lookups are blank, this will be checked</inlineHelpText>
+        <label>Undefined</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

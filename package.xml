@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOLN - 534</fullName>
+    <description>Mike; BVA detail help text and layout</description>
+    <types>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget_GCM__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget_Projected_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget_Projected__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget_Revised_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget_Revised__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Budget__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Current_Rate__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.GCM_Approved_Disbursement_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.GCM_Approved_Disbursement__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.GCM_Pending_Disbursement_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.GCM_Pending_Disbursement__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Billed_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Billed__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Deferred_Bill_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Deferred_Bill__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Ready_to_Bill_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Ready_to_Bill__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Total_Billings_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.PSFT_Actual_Total_Billings__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Projected_Rate__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Remaining_Dollars__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Remaining_Hrs__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Revised_Rate__c</members>
+        <members>ENT_Budget_v_Actual_Detail__c.Undefined__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>ENT_Budget_v_Actual_Detail__c-Budget v%2E Actual Detail Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>43.0</version>
+</Package>
